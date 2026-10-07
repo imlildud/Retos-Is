@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica de Git - Equipo 6 Lio's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Equipo 6/styles.css">
+</head>
+<body>
+    <header class="frutiger-bar">
+        <div class="logo">
+            <h1>Práctica de Git</h1>
+            <span class="slogan">Equipo 6 "Lio's"</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección de Tarjetas (Índice de Problemas) -->
+        <section class="seccion-plana">
+            <h2>Índice de Problemas</h2>
+            <div class="valor-grid" id="contenedor-tarjetas">
+                <!-- Las tarjetas se generarán dinámicamente con JS -->
+            </div>
+        </section>
+
+        <!-- Sección de Compilador / Entorno de Ejecución -->
+        <section id="ide-seccion" class="seccion-relieve oculto">
+            <div class="glass-container ide-glass">
+                <h2 id="ide-titulo">Selecciona un problema</h2>
+                <p id="ide-descripcion">La descripción del problema aparecerá aquí.</p>
+                
+                <div class="editor-layout">
+                    <div class="editor-columna">
+                        <h3>Código Fuente</h3>
+                        <textarea id="editor-codigo" spellcheck="false"></textarea>
+                    </div>
+                    <div class="consola-columna">
+                        <h3>Resultado (Consola)</h3>
+                        <pre id="consola-salida"></pre>
+                        <button id="btn-ejecutar" class="btn-frutiger">Ejecutar Código</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="Equipo 6/script.js"></script>
+</body>
+</html>
