@@ -1,0 +1,153 @@
+:root {
+  --canvas: #e0f2fe;
+  --ink: #0b2c5c;
+  --ink-secondary: #1e4b85;
+  --frutiger-green: #8fd14f;
+  --frutiger-blue: #0ea5e9;
+  --frutiger-glow: rgba(255, 255, 255, 0.8);
+  --border: rgba(255, 255, 255, 0.5);
+  
+  --font-sans: 'Inter', sans-serif;
+  --radius-lg: 1.5rem;
+  --radius-pill: 999rem;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: linear-gradient(135deg, #c7e9fb 0%, #a6d8f5 50%, #e0f7fa 100%);
+  background-attachment: fixed;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+header.frutiger-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 15px rgba(0, 100, 200, 0.1);
+}
+
+.logo { text-align: center; }
+.logo h1 { color: var(--frutiger-blue); margin-bottom: 0.2rem; text-shadow: 0 2px 4px rgba(255,255,255,0.8); }
+.logo .slogan { font-size: 1.1rem; font-weight: 600; color: var(--ink-secondary); }
+
+h2 { font-size: 2rem; text-align: center; margin-bottom: 2rem; }
+
+/* Grid de Tarjetas */
+.seccion-plana { padding: 3rem 2rem; }
+.valor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tarjeta-problema {
+  background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.5) 100%);
+  border-top: 2px solid white;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 70, 150, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-problema:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 70, 150, 0.2);
+}
+.tarjeta-problema h3 { color: var(--frutiger-blue); margin-bottom: 0.5rem; }
+
+/* IDE / Compilador */
+.seccion-relieve { padding: 2rem; display: flex; justify-content: center; transition: opacity 0.4s ease; }
+.seccion-relieve.oculto { display: none; opacity: 0; }
+
+.glass-container {
+  width: 100%;
+  max-width: 1100px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 100%);
+  backdrop-filter: blur(16px);
+  border-top: 2px solid var(--frutiger-glow);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 32px rgba(0, 50, 100, 0.1);
+  padding: 2rem;
+}
+
+.editor-layout {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.editor-columna, .consola-columna { flex: 1; min-width: 300px; display: flex; flex-direction: column; }
+.editor-columna h3, .consola-columna h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--ink-secondary); }
+
+#editor-codigo {
+  flex-grow: 1;
+  min-height: 350px;
+  border-radius: 1rem;
+  border: 1px solid var(--frutiger-blue);
+  padding: 1.5rem;
+  font-family: monospace;
+  font-size: 14px;
+  background: rgba(255,255,255,0.85);
+  resize: vertical;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+  outline: none;
+}
+#editor-codigo:focus { border-width: 2px; }
+
+#consola-salida {
+  flex-grow: 1;
+  min-height: 200px;
+  background: var(--ink);
+  color: var(--frutiger-green);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  font-family: monospace;
+  font-size: 15px;
+  overflow-y: auto;
+  box-shadow: inset 0 4px 10px rgba(0,0,0,0.5);
+  margin-bottom: 1.5rem;
+  white-space: pre-wrap;
+}
+
+/* Botón Frutiger */
+.btn-frutiger {
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(180deg, #42b9f5 0%, #0ea5e9 100%);
+  border: 1px solid #0284c7;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.6), 0 4px 8px rgba(14, 165, 233, 0.3);
+  border-radius: var(--radius-pill);
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: flex-end;
+}
+.btn-frutiger:hover {
+  background: linear-gradient(180deg, #5fc7f7 0%, #17aef0 100%);
+  transform: translateY(-2px);
+  box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.8), 0 6px 12px rgba(14, 165, 233, 0.4);
+}
